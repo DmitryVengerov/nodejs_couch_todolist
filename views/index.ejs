@@ -1,13 +1,13 @@
 <h2>Add new task</h2>
 
 <form method='post' action='/list/add'>
-	<input type="text" name="name" placeholder="text" required=>
+	<input type="text" name="text" placeholder="text" required=>
 	<input type="submit" value="submit">
 </form>
 
 <% todolist.forEach(function(dolist){ %>
 	<form method="post" action="/list/delete/<%= dolist.key %>">
 		<input type="hidden" value="<%= dolist.value.rev %>" name='rev'>
-		<input type="submit" value="<%= dolist.value.name %>">
+		<input type="submit" value="<%= dolist.value.text %>">
 	</form>
 <% }); %>

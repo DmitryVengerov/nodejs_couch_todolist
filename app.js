@@ -23,7 +23,6 @@ app.use(bodyParser.urlencoded({extended: false}));
 
 
 app.get('/', function(req, res){
-
 	couch.get(dbname, viewUrl).then(
 		function(data, headers, status){
 			//console.log(data.data.rows);
@@ -38,7 +37,7 @@ app.get('/', function(req, res){
 app.post('/list/add', function(req, res){
 
 	// date from form
-	const name = req.body.name;
+	const text = req.body.text;
 
 	// couch.uniqid().then(ids => ids[0]);
 	couch.uniqid().then(function(ids){
@@ -50,7 +49,7 @@ app.post('/list/add', function(req, res){
     		field: ["sample", "data", true]
     	*/
 
-		couch.insert(dbname,{ _id:id, name:name }).then(
+		couch.insert(dbname,{ _id:id, text:text }).then(
 
 			function(data,headers,status){
 				// redirect 
@@ -67,6 +66,7 @@ app.post('/list/delete/:id', function(req, res){
 
 	// date from form 
 	const id = req.params.id;
+	console.log(id);
 	const rev = req.body.rev;
 
 	// couch.del("databaseName", "some_document_id", "document_revision") with promise
