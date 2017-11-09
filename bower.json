@@ -1,0 +1,21 @@
+{
+  "name": "Dmitij",
+  "description": "list",
+  "main": "app.js",
+  "authors": [
+    "Vengerov Dmitrij hardbeat34@gmail.com"
+  ],
+  "license": "MIT",
+  "keywords": [
+    "server"
+  ],
+  "homepage": "https://github.com/DmitryVengerov/nodejs_couch_todolist",
+  "private": true,
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ]
+}

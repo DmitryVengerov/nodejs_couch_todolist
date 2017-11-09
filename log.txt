@@ -1,0 +1,2 @@
+[Thu, 09 Nov 2017 18:59:05 GMT] [info] [<0.000.0>] pouchdb-server has started on http://127.0.0.1:9000/
+[Thu, 09 Nov 2017 18:59:05 GMT] [info] [<0.000.0>] navigate to http://127.0.0.1:9000/_utils for the Fauxton UI.
