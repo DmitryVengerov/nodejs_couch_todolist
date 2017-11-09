@@ -3,6 +3,10 @@ const express = require('express');
 const bodyParser = require('body-parser');
 const NodeCouchDb = require('node-couchdb');
 
+
+
+//var PouchDB = require('pouchdb');
+
 const couch = new NodeCouchDb({
 	auth: {
 		user:     'admin',

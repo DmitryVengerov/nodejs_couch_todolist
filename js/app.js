@@ -7,7 +7,7 @@
     var syncDom = document.getElementById('sync-wrapper');
 
     // EDITING STARTS HERE (you dont need to edit anything above this line)
-
+    var PouchDB = require('pouchdb-node');
     var db = new PouchDB('todos');
     var remoteCouch = 'http://localhost:5984/todolist';
 
@@ -97,11 +97,12 @@
     // Given an object representing a todo, this will create a list item
     // to display it.
     function createTodoListItem(todo) {
+        /*
         var checkbox = document.createElement('input');
         checkbox.className = 'toggle';
         checkbox.type = 'checkbox';
         checkbox.addEventListener('change', checkboxChanged.bind(this, todo));
-
+        */
         var label = document.createElement('label');
         label.appendChild(document.createTextNode(todo.title));
         label.addEventListener('dblclick', todoDblClicked.bind(this, todo));
@@ -109,12 +110,13 @@
         var deleteLink = document.createElement('button');
         deleteLink.className = 'destroy';
         deleteLink.addEventListener('click', deleteButtonPressed.bind(this, todo));
-
+        /*
         var divDisplay = document.createElement('div');
         divDisplay.className = 'view';
         divDisplay.appendChild(checkbox);
         divDisplay.appendChild(label);
         divDisplay.appendChild(deleteLink);
+        */
 
         var inputEditTodo = document.createElement('input');
         inputEditTodo.id = 'input_' + todo._id;
