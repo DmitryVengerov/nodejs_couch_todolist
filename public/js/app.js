@@ -6,8 +6,6 @@
     var newTodoDom = document.getElementById('new-todo');
     var syncDom = document.getElementById('sync-wrapper');
 
-    // EDITING STARTS HERE (you dont need to edit anything above this line)
-    var PouchDB = require('pouchdb-node');
     var db = new PouchDB('todos');
     var remoteCouch = 'http://localhost:5984/todolist';
 
@@ -15,36 +13,35 @@
         db.changes({
             since: info.update_seq,
             live: true
-        }).on('change', showTodos);
+        }).on('change', ShowTodos);
     });
     // We have to create a new todo document and enter it in the database
+    
     function addTodo(text) {
+        
         var todo = {
             _id: new Date().toISOString(),
-            title: text,
+            text: text,
             completed: false
         };
+        // ложем-кладем
         db.put(todo).then(function(result) {
             console.log('OK');
             console.log(result);
+            console.log(db.allDocs());
         }).catch(function(err) {
             console.log('NONOK');
             console.log(err);
         });
     }
 
-    // Show the current list of todos by reading them from the database
-    function showTodos() {
+    // демонстрируем что есть
+    function ShowTodos() {
         db.allDocs({ include_docs: true, descending: true }, function(err, doc) {
             redrawTodosUI(doc.rows);
         });
     }
 
-    function checkboxChanged(todo, event) {
-        todo.completed = event.target.checked;
-        console.log(todo);
-        db.put(todo);
-    }
     // User pressed the delete button for a todo, delete it
     function deleteButtonPressed(todo) {
         db.remove(todo);
@@ -97,43 +94,25 @@
     // Given an object representing a todo, this will create a list item
     // to display it.
     function createTodoListItem(todo) {
-        /*
-        var checkbox = document.createElement('input');
-        checkbox.className = 'toggle';
-        checkbox.type = 'checkbox';
-        checkbox.addEventListener('change', checkboxChanged.bind(this, todo));
-        */
+
         var label = document.createElement('label');
-        label.appendChild(document.createTextNode(todo.title));
+        label.appendChild(document.createTextNode(todo.text));
         label.addEventListener('dblclick', todoDblClicked.bind(this, todo));
 
         var deleteLink = document.createElement('button');
+        deleteLink.appendChild(document.createTextNode(todo.text));
         deleteLink.className = 'destroy';
         deleteLink.addEventListener('click', deleteButtonPressed.bind(this, todo));
-        /*
+
         var divDisplay = document.createElement('div');
         divDisplay.className = 'view';
-        divDisplay.appendChild(checkbox);
-        divDisplay.appendChild(label);
         divDisplay.appendChild(deleteLink);
-        */
 
         var inputEditTodo = document.createElement('input');
-        inputEditTodo.id = 'input_' + todo._id;
-        inputEditTodo.className = 'edit';
-        inputEditTodo.value = todo.title;
-        inputEditTodo.addEventListener('keypress', todoKeyPressed.bind(this, todo));
-        inputEditTodo.addEventListener('blur', todoBlurred.bind(this, todo));
 
         var li = document.createElement('li');
         li.id = 'li_' + todo._id;
         li.appendChild(divDisplay);
-        li.appendChild(inputEditTodo);
-
-        if (todo.completed) {
-            li.className += 'complete';
-            checkbox.checked = true;
-        }
 
         return li;
     }
@@ -158,7 +137,7 @@
     }
 
     addEventListeners();
-    showTodos();
+    ShowTodos();
 
     if (remoteCouch) {
         sync();

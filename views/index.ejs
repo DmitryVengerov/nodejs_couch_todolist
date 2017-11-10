@@ -30,8 +30,10 @@
 </section>
 
 <script src="//cdn.jsdelivr.net/npm/pouchdb@6.3.4/dist/pouchdb.min.js"></script>
-<script src="js/app.js"></script>
+
+
 <script type="text/javascript">
+    
 (function() {
 
     'use strict';
@@ -39,9 +41,6 @@
     var ENTER_KEY = 13;
     var newTodoDom = document.getElementById('new-todo');
     var syncDom = document.getElementById('sync-wrapper');
-
-    // EDITING STARTS HERE (you dont need to edit anything above this line)
-
 
     var db = new PouchDB('todos');
     var remoteCouch = 'http://localhost:5984/todolist';
@@ -61,7 +60,7 @@
             text: text,
             completed: false
         };
-        // ложем 
+        // ложем-кладем
         db.put(todo).then(function(result) {
             console.log('OK');
             console.log(result);
@@ -72,18 +71,13 @@
         });
     }
 
-    // Show the current list of todos by reading them from the database
+    // демонстрируем что есть
     function ShowTodos() {
         db.allDocs({ include_docs: true, descending: true }, function(err, doc) {
             redrawTodosUI(doc.rows);
         });
     }
 
-    function checkboxChanged(todo, event) {
-        todo.completed = event.target.checked;
-        console.log(todo);
-        db.put(todo);
-    }
     // User pressed the delete button for a todo, delete it
     function deleteButtonPressed(todo) {
         db.remove(todo);
