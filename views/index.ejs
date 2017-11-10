@@ -30,7 +30,7 @@
 </section>
 
 <script src="//cdn.jsdelivr.net/npm/pouchdb@6.3.4/dist/pouchdb.min.js"></script>
-<!--<script src="js/app.js"></script>-->
+<script src="js/app.js"></script>
 <script type="text/javascript">
 (function() {
 
@@ -53,12 +53,15 @@
         }).on('change', ShowTodos);
     });
     // We have to create a new todo document and enter it in the database
+    
     function addTodo(text) {
+        
         var todo = {
             _id: new Date().toISOString(),
             text: text,
             completed: false
         };
+        // ложем 
         db.put(todo).then(function(result) {
             console.log('OK');
             console.log(result);
@@ -133,11 +136,7 @@
     // Given an object representing a todo, this will create a list item
     // to display it.
     function createTodoListItem(todo) {
-        /*var checkbox = document.createElement('input');
-        checkbox.className = 'toggle';
-        checkbox.type = 'checkbox';
-        checkbox.addEventListener('change', checkboxChanged.bind(this, todo));
-        */
+
         var label = document.createElement('label');
         label.appendChild(document.createTextNode(todo.text));
         label.addEventListener('dblclick', todoDblClicked.bind(this, todo));
@@ -149,27 +148,13 @@
 
         var divDisplay = document.createElement('div');
         divDisplay.className = 'view';
-        //divDisplay.appendChild(checkbox);
-        //divDisplay.appendChild(label);
         divDisplay.appendChild(deleteLink);
 
         var inputEditTodo = document.createElement('input');
-        //inputEditTodo.id = 'input_' + todo._id;
-        //inputEditTodo.className = 'edit';
-        //inputEditTodo.value = todo.text;
-        //inputEditTodo.addEventListener('keypress', todoKeyPressed.bind(this, todo));
-        //inputEditTodo.addEventListener('blur', todoBlurred.bind(this, todo));
 
         var li = document.createElement('li');
         li.id = 'li_' + todo._id;
         li.appendChild(divDisplay);
-        //li.appendChild(inputEditTodo);
-        /*
-        if (todo.completed) {
-            li.className += 'complete';
-            checkbox.checked = true;
-        }
-        */
 
         return li;
     }
