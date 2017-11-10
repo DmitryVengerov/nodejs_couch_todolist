@@ -12,7 +12,9 @@
     "body-parser": "^1.18.2",
     "ejs": "^2.5.7",
     "express": "^4.16.2",
+    "express-pouchdb": "^2.3.7",
     "node-couchdb": "^1.2.0",
+    "pouchdb": "^6.3.4",
     "pouchdb-node": "^6.3.4"
   }
 }

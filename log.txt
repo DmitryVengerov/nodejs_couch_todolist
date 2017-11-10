@@ -1,2 +1,36 @@
 [Thu, 09 Nov 2017 18:59:05 GMT] [info] [<0.000.0>] pouchdb-server has started on http://127.0.0.1:9000/
 [Thu, 09 Nov 2017 18:59:05 GMT] [info] [<0.000.0>] navigate to http://127.0.0.1:9000/_utils for the Fauxton UI.
+[Fri, 10 Nov 2017 20:37:47 GMT] [info] [<0.000.0>] pouchdb-server has started on http://127.0.0.1:3000/
+[Fri, 10 Nov 2017 20:37:47 GMT] [info] [<0.000.0>] navigate to http://127.0.0.1:3000/_utils for the Fauxton UI.
+[Fri, 10 Nov 2017 20:38:06 GMT] [info] [<0.000.0>] 127.0.0.1 - - GET /_utils 301
+[Fri, 10 Nov 2017 20:38:06 GMT] [info] [<0.000.0>] 127.0.0.1 - - GET /robots.txt 404
+[Fri, 10 Nov 2017 20:38:06 GMT] [info] [<0.000.0>] 127.0.0.1 - - GET /_utils/ 200
+[Fri, 10 Nov 2017 20:38:06 GMT] [info] [<0.000.0>] 127.0.0.1 - - GET /_utils/dashboard.assets/css/styles-a9623008fc27e79da2388441deeacfab.css 200
+[Fri, 10 Nov 2017 20:38:06 GMT] [info] [<0.000.0>] 127.0.0.1 - - GET /_utils/dashboard.assets/js/bundle-34997e32896293a1fa5d71f79eb1b4f7.js 200
+[Fri, 10 Nov 2017 20:38:06 GMT] [info] [<0.000.0>] 127.0.0.1 - - GET /_session 200
+[Fri, 10 Nov 2017 20:38:06 GMT] [info] [<0.000.0>] 127.0.0.1 - - GET /_session 304
+[Fri, 10 Nov 2017 20:38:06 GMT] [info] [<0.000.0>] 127.0.0.1 - - GET / 200
+[Fri, 10 Nov 2017 20:38:06 GMT] [info] [<0.000.0>] 127.0.0.1 - - GET /_utils/dashboard.assets/img/pouchdb-site.png 200
+[Fri, 10 Nov 2017 20:38:07 GMT] [info] [<0.000.0>] 127.0.0.1 - - GET /_utils/dashboard.assets/fonts/fauxtonicon5.woff 200
+[Fri, 10 Nov 2017 20:38:07 GMT] [info] [<0.000.0>] 127.0.0.1 - - GET /_all_dbs?_=1510346286511 200
+[Fri, 10 Nov 2017 20:38:07 GMT] [info] [<0.000.0>] 127.0.0.1 - - GET /_all_dbs?startkey=%22%22&endkey=%22%E9%A6%99%22&limit=30&_=1510346286512 200
+[Fri, 10 Nov 2017 20:38:07 GMT] [info] [<0.000.0>] 127.0.0.1 - - GET /_replicator?_=1510346286513 200
+[Fri, 10 Nov 2017 20:38:07 GMT] [info] [<0.000.0>] 127.0.0.1 - - GET /_users?_=1510346286514 200
+[Fri, 10 Nov 2017 20:38:07 GMT] [info] [<0.000.0>] 127.0.0.1 - - GET /_utils/dashboard.assets/fonts/fontawesome-webfont.woff 200
+[Fri, 10 Nov 2017 20:38:07 GMT] [info] [<0.000.0>] 127.0.0.1 - - GET /_utils/dashboard.assets/img/pouchdb-favicon.png 200
+[Fri, 10 Nov 2017 20:38:33 GMT] [info] [<0.000.0>] 127.0.0.1 - - GET /_active_tasks 200
+[Fri, 10 Nov 2017 20:38:35 GMT] [info] [<0.000.0>] 127.0.0.1 - - GET /_membership 200
+[Fri, 10 Nov 2017 20:38:35 GMT] [info] [<0.000.0>] 127.0.0.1 - - GET /_node/node1@127.0.0.1/_config 200
+[Fri, 10 Nov 2017 20:38:37 GMT] [info] [<0.000.0>] 127.0.0.1 - - GET /_all_dbs?_=1510346286515 200
+[Fri, 10 Nov 2017 20:38:37 GMT] [info] [<0.000.0>] 127.0.0.1 - - GET /_replicator?_=1510346286516 200
+[Fri, 10 Nov 2017 20:38:37 GMT] [info] [<0.000.0>] 127.0.0.1 - - GET /_users?_=1510346286517 200
+[Fri, 10 Nov 2017 20:38:39 GMT] [info] [<0.000.0>] 127.0.0.1 - - GET /_all_dbs 200
+[Fri, 10 Nov 2017 20:38:39 GMT] [info] [<0.000.0>] 127.0.0.1 - - GET /_replicator/_all_docs?include_docs=true&limit=100 200
+[Fri, 10 Nov 2017 20:38:40 GMT] [info] [<0.000.0>] 127.0.0.1 - - GET /_active_tasks 304
+[Fri, 10 Nov 2017 20:38:41 GMT] [info] [<0.000.0>] 127.0.0.1 - - GET /_all_dbs?_=1510346286518 200
+[Fri, 10 Nov 2017 20:38:41 GMT] [info] [<0.000.0>] 127.0.0.1 - - GET /_replicator?_=1510346286519 200
+[Fri, 10 Nov 2017 20:38:41 GMT] [info] [<0.000.0>] 127.0.0.1 - - GET /_users?_=1510346286520 200
+[Fri, 10 Nov 2017 20:43:29 GMT] [info] [<0.000.0>] pouchdb-server has started on http://127.0.0.1:3000/
+[Fri, 10 Nov 2017 20:43:29 GMT] [info] [<0.000.0>] navigate to http://127.0.0.1:3000/_utils for the Fauxton UI.
+[Fri, 10 Nov 2017 20:53:36 GMT] [info] [<0.000.0>] pouchdb-server has started on http://127.0.0.1:3000/
+[Fri, 10 Nov 2017 20:53:36 GMT] [info] [<0.000.0>] navigate to http://127.0.0.1:3000/_utils for the Fauxton UI.

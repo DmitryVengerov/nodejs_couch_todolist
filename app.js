@@ -2,6 +2,7 @@ const path = require('path');
 const express = require('express');
 const bodyParser = require('body-parser');
 const NodeCouchDb = require('node-couchdb');
+const PouchDB = require('pouchdb');
 
 
 // вводим логин пароль для коучДиБи
@@ -19,13 +20,16 @@ const app = express();
 // порт
 var port = 5000;
 
+
+
+// подключение 
 app.set('view engine', 'ejs');
 app.set('views', path.join(__dirname, 'views'));
+
 app.use(express.static('public'));
-
-
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({extended: false}));
+app.use('/db', require('express-pouchdb')(PouchDB));
 
 
 app.get('/', function(req, res){

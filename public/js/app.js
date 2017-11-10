@@ -5,8 +5,9 @@
     var ENTER_KEY = 13;
     var newTodoDom = document.getElementById('new-todo');
     var syncDom = document.getElementById('sync-wrapper');
-
+    // создаем пончик
     var db = new PouchDB('todos');
+    // ссылка на базу коуча
     var remoteCouch = 'http://localhost:5984/todolist';
 
     db.info(function(err, info) {
@@ -15,10 +16,10 @@
             live: true
         }).on('change', ShowTodos);
     });
-    // We have to create a new todo document and enter it in the database
+
     
     function addTodo(text) {
-        
+        // обьект для занесения
         var todo = {
             _id: new Date().toISOString(),
             text: text,
@@ -42,13 +43,12 @@
         });
     }
 
-    // User pressed the delete button for a todo, delete it
+    // удаляем если нужно
     function deleteButtonPressed(todo) {
         db.remove(todo);
     }
 
-    // The input box when editing a todo has blurred, we should save
-    // the new title or delete the todo if the title is empty
+
     function todoBlurred(todo, event) {
         var trimmedText = event.target.value.trim();
         if (!trimmedText) {
@@ -59,22 +59,21 @@
         }
     }
 
-    // Initialise a sync with the remote server
+    // синхронизируемся с коуча
     function sync() {
         syncDom.setAttribute('data-sync-state', 'syncing');
         var opts = { live: true };
+        // реплика
         db.replicate.to(remoteCouch, opts, syncError);
         db.replicate.from(remoteCouch, opts, syncError);
     }
 
-    // EDITING STARTS HERE (you dont need to edit anything below this line)
 
-    // There was some form or error syncing
     function syncError() {
         syncDom.setAttribute('data-sync-state', 'error');
     }
 
-    // User has double clicked a todo, display an input so they can edit the title
+    // кликнул  
     function todoDblClicked(todo) {
         var div = document.getElementById('li_' + todo._id);
         var inputEditTodo = document.getElementById('input_' + todo._id);
@@ -82,8 +81,7 @@
         inputEditTodo.focus();
     }
 
-    // If they press enter while editing an entry, blur it to trigger save
-    // (or delete)
+    
     function todoKeyPressed(todo, event) {
         if (event.keyCode === ENTER_KEY) {
             var inputEditTodo = document.getElementById('input_' + todo._id);
@@ -91,8 +89,7 @@
         }
     }
 
-    // Given an object representing a todo, this will create a list item
-    // to display it.
+
     function createTodoListItem(todo) {
 
         var label = document.createElement('label');
