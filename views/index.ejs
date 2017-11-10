@@ -5,14 +5,15 @@
 </form>
 <ul>
 <% todolist.forEach(function(dolist){ %>
-<li>
-    <form method="post" action="/list/delete/<%= dolist.key %>" style='margin: 0;'>
-        <input type="hidden" value="<%= dolist.value.rev %>" name='rev'>
-        <input type="submit" value="<%= dolist.value.text %>">
-    </form>
-</li>
+    <li>
+        <form method="post" action="/list/delete/<%= dolist.key %>" style='margin: 0;'>
+            <input type="hidden" value="<%= dolist.value.rev %>" name='rev'>
+            <input type="submit" value="<%= dolist.value.text %>">
+        </form>
+    </li>
 <% }); %>
-    </ul>
+</ul>
+
 <section id="todoapp">
     <header id="header">
         <h2>This is method with PouchDB request</h2>
@@ -21,13 +22,6 @@
     <section id="main">
         <ul id="todo-list"></ul>
     </section>
-    <footer id="f§ooter">
-        <span id="todo-count"></span>
-        <div id="sync-wrapper">
-            
-            
-        </div>
-    </footer>
 </section>
 
 <script src="//cdn.jsdelivr.net/npm/pouchdb@6.3.4/dist/pouchdb.min.js"></script>
