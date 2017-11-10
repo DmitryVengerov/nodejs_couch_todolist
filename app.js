@@ -44,7 +44,7 @@ app.post('/list/add', function(req, res){
 	const text = req.body.text;
 	couch.uniqid().then(function(ids){
 		const id = ids[0];
-		couch.insert(dbname,{ _id:id, title:text }).then(
+		couch.insert(dbname,{ _id:id, text:text }).then(
 			function(data,headers,status){ 
 				res.redirect('/');
 			},
