@@ -1,0 +1,5 @@
+FROM node:boron
+WORKDIR /app
+COPY package.json/app
+RUN nom Install 
+COPY .

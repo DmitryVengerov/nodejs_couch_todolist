@@ -76,6 +76,10 @@ app.post('/list/delete/:id', function(req, res){
 });
 
 // прослушиваем порт
+/*
 app.listen(port, function(){
 	console.log('Server started on port ', port);
 });
+*/
+
+app.listen(process.env.PORT);
