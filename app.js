@@ -9,7 +9,7 @@ const PouchDB = require('pouchdb');
 const couch = new NodeCouchDb({
 	auth: {
 		user:     'admin',
-		password: 'admin'
+		password: 'e7e675fd8b1a'
 	}
 });
 // название базы и ссылка на нее
