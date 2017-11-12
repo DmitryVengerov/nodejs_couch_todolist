@@ -2,13 +2,14 @@ const path = require('path');
 const express = require('express');
 const bodyParser = require('body-parser');
 const NodeCouchDb = require('node-couchdb');
-const PouchDB = require('pouchdb');
+//const PouchDB = require('pouchdb');
 
 
 // вводим логин пароль для коучДиБи
 const couch = new NodeCouchDb({
 	auth: {
 		user:     'admin',
+		//password: 'admin'
 		password: 'e7e675fd8b1a'
 	}
 });
@@ -29,7 +30,7 @@ app.set('views', path.join(__dirname, 'views'));
 app.use(express.static('public'));
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({extended: false}));
-app.use('/db', require('express-pouchdb')(PouchDB));
+//app.use('/db', require('express-pouchdb')(PouchDB));
 
 
 app.get('/', function(req, res){
@@ -81,5 +82,5 @@ app.listen(port, function(){
 	console.log('Server started on port ', port);
 });
 */
-
+// для хостинга
 app.listen(process.env.PORT);

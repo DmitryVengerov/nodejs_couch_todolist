@@ -8,7 +8,8 @@
     // создаем пончик
     var db = new PouchDB('todos');
     // ссылка на базу коуча
-    var remoteCouch = 'https://couchdb-8435ea.smileupps.com/todolist';
+    //var remoteCouch = 'http://localhost:5984/todolist';
+    //var remoteCouch = 'https://couchdb-8435ea.smileupps.com/todolist'
 
     db.info(function(err, info) {
         db.changes({
