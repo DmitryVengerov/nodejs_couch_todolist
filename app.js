@@ -1,18 +1,19 @@
 const path = require('path');
 const express = require('express');
 const bodyParser = require('body-parser');
-const NodeCouchDb = require('node-couchdb');
+//const NodeCouchDb = require('node-couchdb');
 //const PouchDB = require('pouchdb');
 
 
 // вводим логин пароль для коучДиБи
-const couch = new NodeCouchDb({
+/*const couch = new NodeCouchDb({
 	auth: {
 		user:     'admin',
 		//password: 'admin'
 		password: 'e7e675fd8b1a'
 	}
 });
+*/
 // название базы и ссылка на нее
 const dbname = 'todolist';
 const viewUrl = '_design/all_list/_view/all';
