@@ -5,6 +5,9 @@ const NodeCouchDb = require('node-couchdb');
 const PouchDB = require('pouchdb');
 
 
+//db.replicate.to('http://example.com/mydb');
+
+
 // вводим логин пароль для коучДиБи
 const couch = new NodeCouchDb({
 	auth: {
@@ -77,10 +80,10 @@ app.post('/list/delete/:id', function(req, res){
 });
 
 // прослушиваем порт
-/*
+
 app.listen(port, function(){
 	console.log('Server started on port ', port);
 });
-*/
+
 // для хостинга
-app.listen(process.env.PORT);
+//app.listen(process.env.PORT);
