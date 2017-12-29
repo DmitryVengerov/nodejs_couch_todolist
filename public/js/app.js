@@ -5,12 +5,10 @@
     var ENTER_KEY = 13;
     var newTodoDom = document.getElementById('new-todo');
     var syncDom = document.getElementById('sync-wrapper');
-    // создаем пончик
+
     var db = new PouchDB('http://localhost:5985/simple');
-    
-    var remoteCouch = 'http://localhost:5984/todolist';
-    //const remoteCouch = 'http://${process.env.DB_LOGIN}:${process.env.DB_PASS}@95.85.26.56:5984/todolist'; 
-    //var remoteCouch = 'https://couchdb-8435ea.smileupps.com/todolist'
+    var remoteCouch    = 'http://localhost:5984/todolist';
+
 
     db.info(function(err, info) {
         db.changes({
